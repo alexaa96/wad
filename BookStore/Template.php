@@ -7,16 +7,26 @@
     </head>
     <body>
         <div id="wrapper">
+            <div id="lognav">
+                <a href="signup.php">Sign up</a>
+                <form>
+                    <input type="text" name="uid" placeholder="username/e-mail">
+                    <input type="password" name="pwd" placeholder="password">
+                    <button type="submit" name="submit">Login</button>
+                    
+                </form> 
+
+            </div>
+            
             <div id="banner">             
             </div>
             
             <nav id="navigation">
                 <ul id="nav">
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="#">Books</a></li>
+                    <li><a href="Book.php">Books</a></li>
                     <li><a href="#">Shop</a></li>
                     <li><a href="#">About</a></li>
-                    <li><a href="../login/index.php">Login</a></li>
                 </ul>
             </nav>
             
