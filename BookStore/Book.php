@@ -1,22 +1,27 @@
 <?php
-
-require 'Controller/BookController.php';
-$bookController = new bookController();
-
-if(isset($_POST['types']))
-{
-    //Fill page with books of the selected type
-    $bookTables = $bookController->CreateBookTables($_POST['types']);
-}
-else 
-{
-    //Page is loaded for the first time, no type selected -> Fetch all types
-    $bookTables = $bookController->CreateBookTables('%');
-}
-
-//Output page data
-$title = 'Book overview';
-$content = $bookController->CreateBookDropdownList(). $bookTables;
-
-include 'Template.php';
+include 'header.php';
+include 'nav.php';
+?>
+<html>
+    <head>
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title><?php echo $title; ?></title>
+        <link rel="stylesheet" type="text/css" href="Styles/Stylesheet.css" />
+    </head>
+    <body>
+        <div id="categories">
+            <ul>
+                    <li><a href="#">Category0</a></li>
+                    <li><a href="#">Category1</a></li>
+                    <li><a href="#">Category2</a></li>
+                    <li><a href="#">Category3</a></li>
+                    <li><a href="#">Category4</a></li>
+                    <li><a href="#">Category5</a></li>
+                    <li><a href="#">Category6</a></li>
+            </ul>
+        </div>
+    </body>
+</html>
+<?php
+include 'footer.php';
 ?>

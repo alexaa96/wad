@@ -18,8 +18,7 @@
 
             </div>
             
-            <div id="banner">             
-            </div>
+           
             
             <nav id="navigation">
                 <ul id="nav">
