@@ -1,10 +1,9 @@
-
-
-    <?php
-
+<?php
+    include 'header.php';
+    include 'nav.php';
     // Include config file
 
-    require_once 'config.php';
+    require_once 'configure.php';
 
      
 
@@ -185,7 +184,6 @@
         mysqli_close($link);
 
     }
-
     ?>
 
      
@@ -199,10 +197,9 @@
         <meta charset="UTF-8">
 
         <title>Sign Up</title>
-        
-        <link rel="stylesheet" type="text/css" href="../Styles/Stylesheet.css">
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-        
+
         <style type="text/css">
 
             body{ font: 14px sans-serif; }
@@ -270,4 +267,6 @@
     </body>
 
     </html>
-
+    <?php>
+    include 'footer.php';
+    </php>

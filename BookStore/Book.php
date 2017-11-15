@@ -11,7 +11,7 @@ include 'nav.php';
     <body>
         <div id="categories">
             <ul>
-                    <li><a href="#">Category0</a></li>
+                    <li><a href="Fantasy.php">Fantasy</a></li>
                     <li><a href="#">Category1</a></li>
                     <li><a href="#">Category2</a></li>
                     <li><a href="#">Category3</a></li>
@@ -20,8 +20,6 @@ include 'nav.php';
                     <li><a href="#">Category6</a></li>
             </ul>
         </div>
+
     </body>
 </html>
-<?php
-include 'footer.php';
-?>

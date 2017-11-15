@@ -204,3 +204,44 @@ footer
 #signform button{
     padding: 0px 5%;
 }
+.container {
+    width: 500px;
+    margin: auto;
+    float:left;
+}
+#categories
+{
+    height: 600px;
+    width :  300px;
+    border: 3px solid #E3E3E3;
+    margin-top: 20px;
+    text-shadow: 0.1em 0.1em #333;
+}
+
+#categories li{
+    font-size: 24px;
+    margin :auto;
+    width: 180px;
+    float:left;
+    height: 50px;
+}
+#banner_fantasy{
+    background-image: url(../Images/fantasy.jpg);
+    background-repeat: no-repeat;
+    background-size: 800px;
+    margin-left: 301px;
+    border: 5px solid #dedede;    
+    height: 200px;
+    float:left;
+    width :800px;
+    background-position: center;
+    right :600px;
+}
+#books{
+    
+     font-size: 24px;
+    margin :auto;
+    width: 180px;
+    float:right;
+    height: 50px;
+}

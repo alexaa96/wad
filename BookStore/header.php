@@ -9,7 +9,7 @@
 <body>
     <header>
         <div id="lognav">
-                <a href="signup.php">Sign up</a>
+                <a href="signup1.php">Sign up</a>
                 <form>
                     <input type="text" name="uid" placeholder="username/e-mail">
                     <input type="password" name="pwd" placeholder="password">
