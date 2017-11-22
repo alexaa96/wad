@@ -205,9 +205,7 @@ footer
     padding: 0px 5%;
 }
 .container {
-    width: 500px;
-    margin: auto;
-    float:left;
+    width: 0px;
 }
 #categories
 {
@@ -220,28 +218,146 @@ footer
 
 #categories li{
     font-size: 24px;
-    margin :auto;
     width: 180px;
     float:left;
     height: 50px;
 }
 #banner_fantasy{
     background-image: url(../Images/fantasy.jpg);
-    background-repeat: no-repeat;
-    background-size: 800px;
     margin-left: 301px;
     border: 5px solid #dedede;    
-    height: 200px;
+    height: 150px;
     float:left;
-    width :800px;
+    width :1000px;
     background-position: center;
     right :600px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #books{
     
-     font-size: 24px;
-    margin :auto;
-    width: 180px;
-    float:right;
-    height: 50px;
+    float: left;
+    width: 200px;
+    height: 250px;
+    padding:10px 5px 15px 20px;
+    margin-top: 200px;
+    background-size:cover;
+    margin-left:20px;
+   background-image: url(../Images/lord_of_the_rings.jpg);
+
 }
+#img_harrypotter{
+    
+    float: left;
+    width: 200px;
+    height: 250px;
+    padding:10px 5px 15px 20px;
+    margin-top: 200px;
+    margin-left:20px;
+    background-image: url(../Images/Harry_Potter_and_the_Philosopher_Stone.jpg);
+    background-size:cover;
+    
+    
+}
+#img_harrypotter li
+{
+    font-size: 24px;
+    width: 180px;
+    float:left;
+    height: 50px;
+    margin-top:260px;
+    
+    
+}
+.row{
+    height: 150px;
+    float:left;
+    width :1000px; 
+    
+    text-shadow: 0em 0em #333;
+}
+.row ul {
+    float: left;
+    height: 600px;
+    text-shadow: 0.1em 0.1em #333;
+    width :  300px;
+    border: 3px solid #E3E3E3;
+    margin-top: 20px;
+    
+    
+}
+#banner_childhood{
+    background-image: url(../Images/childhood.jpg);
+    margin-left: 301px;
+    border: 5px solid #dedede;    
+    height: 150px;
+    float:left;
+    width :1000px;
+    background-position: center;
+    right :600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#banner_love{
+    background-image: url(../Images/love.jpg);
+    margin-left: 301px;
+    border: 5px solid #dedede;    
+    height: 150px;
+    float:left;
+    width :1000px;
+    background-position: center;
+    right :600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#banner_sf{
+    background-image: url(../Images/SF.jpg);
+    margin-left: 301px;
+    border: 5px solid #dedede;    
+    height: 150px;
+    float:left;
+    width :1000px;
+    background-position: center;
+    right :600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#banner_history{
+    background-image: url(../Images/History-banner.jpg);
+    margin-left: 301px;
+    border: 5px solid #dedede;    
+    height: 150px;
+    float:left;
+    width :1000px;
+    background-position: center;
+    right :600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#banner_poetry{
+    background-image: url(../Images/book4.jpg);
+    margin-left: 301px;
+    border: 5px solid #dedede;    
+    height: 150px;
+    float:left;
+    width :1000px;
+    background-position: center;
+    right :600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#banner_humor{
+    background-image: url(../Images/humor.jpg);
+    margin-left: 301px;
+    border: 5px solid #dedede;    
+    height: 150px;
+    float:left;
+    width :1000px;
+    background-position: center;
+    right :600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+

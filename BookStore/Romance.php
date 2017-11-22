@@ -18,16 +18,11 @@ include 'nav.php';
          <div class="container">
            
              <div id="categories">
-                  <div id="banner_fantasy">
-                      <div id="books"> </div>
-                      <div id="img_harrypotter">
-                          <ul>
-                          <li><a href="books.php">Harry Potter</a></li>
-                          </ul>
-                      </div>                    
+                  <div id="banner_love">
+                      
                   </div>
               <ul>
-                   <li><a href="Fantasy.php">Fantasy</a></li>
+                  <li><a href="Fantasy.php">Fantasy</a></li>
                     <li><a href="Romance.php">Romance</a></li>
                     <li><a href="Childhood.php">Childhood</a></li>
                     <li><a href="SF.php">Science Fiction</a></li>

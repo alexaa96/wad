@@ -12,12 +12,12 @@ include 'nav.php';
         <div id="categories">
             <ul>
                     <li><a href="Fantasy.php">Fantasy</a></li>
-                    <li><a href="#">Category1</a></li>
-                    <li><a href="#">Category2</a></li>
-                    <li><a href="#">Category3</a></li>
-                    <li><a href="#">Category4</a></li>
-                    <li><a href="#">Category5</a></li>
-                    <li><a href="#">Category6</a></li>
+                    <li><a href="Romance.php">Romance</a></li>
+                    <li><a href="Childhood.php">Childhood</a></li>
+                    <li><a href="SF.php">Science Fiction</a></li>
+                    <li><a href="Humor.php">Humor</a></li>
+                    <li><a href="History.php">History</a></li>
+                    <li><a href="Poetry.php">Poetry</a></li>
             </ul>
         </div>
 
