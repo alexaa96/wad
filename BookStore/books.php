@@ -2,12 +2,12 @@
 <?php
 include 'header.php';
 include 'nav.php';
-//$book_isbn = $_GET['book_isbn'];
+ $book_isbn = $_GET['bookisbn'];
   // connecto database
   require_once "./functions/database_functions.php";
   $conn = db_connect();
-
-  $query = "SELECT * FROM books WHERE book_isbn = '978-0-321-94786-4'";
+  //$book_isbn = $_GET['book_isbn'];              
+  $query = "SELECT * FROM books WHERE book_isbn = '$book_isbn'";
   $result = mysqli_query($conn, $query);
   if(!$result){
     echo "Can't retrieve data " . mysqli_error($conn);
@@ -24,18 +24,18 @@ include 'nav.php';
   //require "./template/header.php";
 ?>
       <!-- Example row of columns -->
-      <p class="lead" style="margin: 25px 0"><a href="books.php">Books</a> > <?php echo $row['book_title']; ?></p>
+   
       <div id="categories">
                    
       <div class="row">
             <ul>
-                    <li><a href="Fantasy.php">Fantasy</a></li>
-                    <li><a href="#">Romance</a></li>
-                    <li><a href="#">Childhood</a></li>
-                    <li><a href="#">Science Fiction</a></li>
-                    <li><a href="#">Humor</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">Poetry</a></li>
+               <li><a href="Fantasy.php">Fantasy</a></li>
+                    <li><a href="Romance.php">Romance</a></li>
+                    <li><a href="Childhood.php">Childhood</a></li>
+                    <li><a href="SF.php">Science Fiction</a></li>
+                    <li><a href="Humor.php">Humor</a></li>
+                    <li><a href="History.php">History</a></li>
+                    <li><a href="Poetry.php">Poetry</a></li>
             </ul>
         <div class="col-md-3 text-center">
           <img class="img-responsive img-thumbnail" src="./Images/<?php echo $row['book_image']; ?>">

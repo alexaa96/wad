@@ -1,12 +1,7 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 include 'header.php';
 include 'nav.php';
+include 'allbooks.php';
 ?>
 <html>
     <head>
@@ -19,22 +14,41 @@ include 'nav.php';
            
              <div id="categories">
                   <div id="banner_humor">
-                      
-                  </div>
-              <ul>
-                  <li><a href="Fantasy.php">Fantasy</a></li>
-                    <li><a href="Romance.php">Romance</a></li>
-                    <li><a href="Childhood.php">Childhood</a></li>
-                    <li><a href="SF.php">Science Fiction</a></li>
-                    <li><a href="Humor.php">Humor</a></li>
-                    <li><a href="History.php">History</a></li>
-                    <li><a href="Poetry.php">Poetry</a></li>
-              </ul>
-             </div>
-       
-         </div>
+                 
+                        <?php for($i = 0; $i < mysqli_num_rows($result); $i++){ ?>
+                        <div class="row">
+                            <?php while($query_row = mysqli_fetch_assoc($result)){ ?>
+                                <div class="col-md-3">
+                                    <a href="books.php?bookisbn=<?php echo $query_row['book_isbn']; ?> ">
+                                        <img class="img_childhood" src="./Images/<?php echo $query_row['book_image']; ?>" height="250">
+                                    </a>
+                                </div>
+                            <?php
+                                $count++;
+                                if($count >= 4){
+                                $count = 0;
+                                break;
+                                }
+                            } ?> 
+                        </div>
+                        <?php
+                        }
+                            if(isset($conn)) { mysqli_close($conn); }
+                        ?>
+                    </div>
+                    <ul>
+                        <li><a href="Fantasy.php?cat=Fantasy">Fantasy</a></li>
+                        <li><a href="Romance.php?cat=Romance">Romance</a></li>
+                        <li><a href="Childhood.php?cat=Childhood">Childhood</a></li>
+                        <li><a href="SF.php?cat=SF">Science Fiction</a></li>
+                        <li><a href="Humor.php?cat=Humor">Humor</a></li>
+                        <li><a href="History.php?cat=History">History</a></li>
+                        <li><a href="Poetry.php?cat=Poetry">Poetry</a></li>
+                    </ul>
+                </div>  
+            </div>  
+        <?php
+             require_once "footer.php"
+        ?>
     </body>
 </html>
-<?php
-include 'footer.php';
-?>
