@@ -42,11 +42,13 @@ body p
     font-size: 16px;
     color: #111;
     cursor: pointer;
+    margin-right: 10px;
     
 }
 
 #lognav form {
     float: right;
+    margin-right:50px;
 }
 
 #lognav form input {
@@ -56,8 +58,8 @@ body p
     padding: 0px 10px;
     margin-right: 10px;
     border: none;
+    
 }
-
 #banner
 {
     background-image: url(../Images/banner.jpg);
