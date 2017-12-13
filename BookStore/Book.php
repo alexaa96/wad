@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'head.php';
 include 'nav.php';
 ?>
 <html>
@@ -19,6 +19,7 @@ include 'nav.php';
                         <li><a href="History.php?cat=History">History</a></li>
                         <li><a href="Poetry.php?cat=Poetry">Poetry</a></li>
             </ul>
+       
         </div>
 
     </body>

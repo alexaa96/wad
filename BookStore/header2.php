@@ -21,14 +21,12 @@
                   echo $_SESSION['username']; ?></b>
             </div>
                 <form>
-                    <input type="button" value="Admin" onclick="window.location.href='admin.php'" id ="buttonlogin"/>
-                    <input type="button" value="Login" onclick="window.location.href='login.php'" id ="buttonlogin"/>
-                    <input type='button' value ="Sign up" onclick="window.location.href='signup1.php'"/>
                     <input type='button' value ="Sign Out" onclick="window.location.href='logout.php'"/>
                     </form> 
-            
-
+            <div id="cart" onclick="window.location.href='cart.php?empty='"/>
         </div>
+        </div>
+        
     </header>          
 </body>
 </html>

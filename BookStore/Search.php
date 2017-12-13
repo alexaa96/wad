@@ -1,20 +1,32 @@
 <?php
-include 'head.php';
-include 'nav.php';
-include 'allbooks.php';
+  include 'head.php';
+  include 'nav.php';
+  $count = 0;
+  $book_name = $_GET['name'];
+  // connecto database
+   require_once "./functions/database_functions.php";
+  $conn = db_connect();
+  echo $book_name;
+  $query = "select * from books where book_title like '%$book_name%' OR book_title = '$book_name' OR book_title like '%$book_name' OR book_title like '$book_name%'";
+  $result = mysqli_query($conn, $query);
+  if(!$result){
+    echo "Can't retrieve data " . mysqli_error($conn);
+    exit;
+  }
+
 ?>
+     
 <html>
     <head>
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title><?php echo $title; ?></title>
+        <title><?php echo $title; ?> </title>
         <link rel="stylesheet" type="text/css" href="Styles/Stylesheet.css" />
     </head>
     <body>
-         <div class="container">
-           
-             <div id="categories">
-                  <div id="banner_fantasy">
-                     
+        <div class="container">
+            <div id="categories">
+                <div id="banner_childhood">
+              
                         <?php for($i = 0; $i < mysqli_num_rows($result); $i++){ ?>
                         <div class="row">
                             <?php while($query_row = mysqli_fetch_assoc($result)){ ?>
@@ -35,7 +47,7 @@ include 'allbooks.php';
                         }
                             if(isset($conn)) { mysqli_close($conn); }
                         ?>
-                    </div>
+                </div>
                     <ul>
                         <li><a href="Fantasy.php?cat=Fantasy">Fantasy</a></li>
                         <li><a href="Romance.php?cat=Romance">Romance</a></li>

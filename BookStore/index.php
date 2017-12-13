@@ -1,7 +1,8 @@
 <?php
-include 'header.php';
+include 'head.php';
 include 'banner.php';
 include 'nav.php';
+include 'allbooksindex.php';
 ?>
 
 <html>
@@ -9,71 +10,39 @@ include 'nav.php';
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title><?php echo $title; ?></title>
         <link rel="stylesheet" type="text/css" href="Styles/Stylesheet.css" />
+        <form action="search.php" method="GET">
+        <input type="text" name="name" />
+        <input type="submit" value="Search" />
+        </form>
     </head>
     <body>
             <div id="content_area">
-              
+              <?php for($i = 0; $i < mysqli_num_rows($result); $i++){ ?>
+                        <div class="row1">
+                            <?php while($query_row = mysqli_fetch_assoc($result)){ ?>
+                                <div class="col-md-31">
+                                    <a href="books.php?bookisbn=<?php echo $query_row['book_isbn']; ?> ">
+                                        <img class="img_childhood" src="./Images/<?php echo $query_row['book_image']; ?>" height="250">
+                                    </a>
+                                </div>
+                            <?php
+                                $count++;
+                                if($count >= 6){
+                                $count = 0;
+                                break;
+                                }
+                            } ?> 
+                        </div>
+                        <?php
+                        }
+                            if(isset($conn)) { mysqli_close($conn); }
+                        ?>
             </div>
     </body>
 </html>
 
 
-    <?php
-
-    // Initialize the session
-
-    session_start();
-
-     
-
-    // If session variable is not set it will redirect to login page
-
-    if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
-
-      header("location: login.php");
-
-      exit;
-
-    }
-
-    ?>
-
-     
-
-    <!DOCTYPE html>
-
-    <html lang="en">
-
-    <head>
-
-        <meta charset="UTF-8">
-
-        <title>Welcome</title>
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-
-        <style type="text/css">
-
-            body{ font: 14px sans-serif; text-align: center; }
-
-        </style>
-
-    </head>
-
-    <body>
-
-        <div class="page-header">
-
-            <h1>Hi, <b><?php echo $_SESSION['username']; ?></b>. Welcome to our site.</h1>
-
-        </div>
-
-        <p><a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a></p>
-
-    </body>
-
-    </html>
-
+    
 
 <?php
 include 'footer.php';

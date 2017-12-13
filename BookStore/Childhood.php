@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'head.php';
 include 'nav.php';
 include 'allbooks.php';
 ?>
@@ -17,11 +17,16 @@ include 'allbooks.php';
                     
                         <?php for($i = 0; $i < mysqli_num_rows($result); $i++){ ?>
                         <div class="row">
-                            <?php while($query_row = mysqli_fetch_assoc($result)){ ?>
+                            <?php while($query_row = mysqli_fetch_assoc($result)){ 
+                                $book_isbn=$query_row['book_isbn'];?>
                                 <div class="col-md-3">
                                     <a href="books.php?bookisbn=<?php echo $query_row['book_isbn']; ?> ">
                                         <img class="img_childhood" src="./Images/<?php echo $query_row['book_image']; ?>" height="250">
+                                        
                                     </a>
+                                    
+                                     <input type="hidden" name="bookisbn" value="<?php echo $book_isbn;?>">
+                                        <input type="submit" value="Purchase / Add to cart" name="cart" class="btn btn-primary">
                                 </div>
                             <?php
                                 $count++;
@@ -35,7 +40,7 @@ include 'allbooks.php';
                         }
                             if(isset($conn)) { mysqli_close($conn); }
                         ?>
-                    </div>
+                </div>
                     <ul>
                         <li><a href="Fantasy.php?cat=Fantasy">Fantasy</a></li>
                         <li><a href="Romance.php?cat=Romance">Romance</a></li>

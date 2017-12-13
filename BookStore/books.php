@@ -1,6 +1,5 @@
-
 <?php
-include 'header.php';
+include 'head.php';
 include 'nav.php';
  $book_isbn = $_GET['bookisbn'];
   // connecto database
@@ -21,6 +20,13 @@ include 'nav.php';
   }
 
   $title = $row['book_title'];
+  if((isset($_SESSION['username']) && !empty($_SESSION['username'])))
+      $goto = 'action=cart.php?empty=';
+  else
+      $goto = 'action=index.php';
+  require_once './functions/database_functions.php';
+ 
+  
   //require "./template/header.php";
 ?>
       <!-- Example row of columns -->
@@ -29,13 +35,13 @@ include 'nav.php';
                    
       <div class="row">
             <ul>
-               <li><a href="Fantasy.php">Fantasy</a></li>
-                    <li><a href="Romance.php">Romance</a></li>
-                    <li><a href="Childhood.php">Childhood</a></li>
-                    <li><a href="SF.php">Science Fiction</a></li>
-                    <li><a href="Humor.php">Humor</a></li>
-                    <li><a href="History.php">History</a></li>
-                    <li><a href="Poetry.php">Poetry</a></li>
+                    <li><a href="Fantasy.php?cat=Fantasy">Fantasy</a></li>
+                    <li><a href="Romance.php?cat=Romance">Romance</a></li>
+                    <li><a href="Childhood.php?cat=Childhood">Childhood</a></li>
+                    <li><a href="SF.php?cat=SF">Science Fiction</a></li>
+                    <li><a href="Humor.php?cat=Humor">Humor</a></li>
+                    <li><a href="History.php?cat=History">History</a></li>
+                    <li><a href="Poetry.php?cat=Poetry">Poetry</a></li>
             </ul>
         <div class="col-md-3 text-center">
           <img class="img-responsive img-thumbnail" src="./Images/<?php echo $row['book_image']; ?>">
@@ -68,8 +74,38 @@ include 'nav.php';
               <td><?php echo $key; ?></td>
               <td><?php echo $value; ?></td>
             </tr>
+                <?php } ?>
+            
+            <form method="post" <?php echo $goto;?>>
+            <input type="hidden" name="bookisbn" value="<?php echo $book_isbn;?>">
+            <input type="submit" value="Purchase / Add to cart" name="cart" class="btn btn-primary">
+          </form>
+           
+            <form action="books.php?bookisbn=<?php echo $_GET['bookisbn'];?>" method="POST">
+                
+                <table style="margin-left: 50px;">
+                    <?php if($empty='empty') 
+                    echo "Please fill all forms";
+                       ?>
+                <tr><td>Name: <br><input type="text" name="name"/></td></tr>
+                <tr><td colspan="2">Comment: </td></tr>
+                <tr><td colspan="5"><textarea name="comment" rows="10" cols="50"></textarea></td></tr>
+                <tr><td colspan="2"><input type="submit" name="submit" value="Comment"></td></tr>
+                </table>
+            </form>
+             
             <?php 
-              } 
+            require_once 'Comments.php';
+            $query2="SELECT * FROM comment WHERE bookid=$book_isbn ORDER BY id DESC";
+            $getquery=mysqli_query($conn, $query2);
+while($rows=mysqli_fetch_assoc($getquery))
+{
+$id=$rows['id'];
+$name=$rows['name'];
+$comment=$rows['comment'];
+echo $name . '<br/>' . '<br/>' . $comment . '<br/>' . '<br/>' . '<hr size="1"/>'
+;}
+              //include 'Rating.php';
               if(isset($conn)) {mysqli_close($conn); }
             ?>
           </table>
