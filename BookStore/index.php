@@ -11,7 +11,7 @@ include 'allbooksindex.php';
         <title><?php echo $title; ?></title>
         <link rel="stylesheet" type="text/css" href="Styles/Stylesheet.css" />
         <form action="search.php" method="GET">
-        <input type="text" name="name" />
+        <input type="text2" name="name" />
         <input type="submit" value="Search" />
         </form>
     </head>

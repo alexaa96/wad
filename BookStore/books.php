@@ -94,22 +94,4 @@ include 'nav.php';
                 </table>
             </form>
              
-            <?php 
-            require_once 'Comments.php';
-            $query2="SELECT * FROM comment WHERE bookid=$book_isbn ORDER BY id DESC";
-            $getquery=mysqli_query($conn, $query2);
-while($rows=mysqli_fetch_assoc($getquery))
-{
-$id=$rows['id'];
-$name=$rows['name'];
-$comment=$rows['comment'];
-echo $name . '<br/>' . '<br/>' . $comment . '<br/>' . '<br/>' . '<hr size="1"/>'
-;}
-              //include 'Rating.php';
-              if(isset($conn)) {mysqli_close($conn); }
-            ?>
-          </table>
-       	</div>
-          
-      </div>
-              </div>
+            

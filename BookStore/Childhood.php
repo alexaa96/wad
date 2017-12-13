@@ -24,10 +24,7 @@ include 'allbooks.php';
                                         <img class="img_childhood" src="./Images/<?php echo $query_row['book_image']; ?>" height="250">
                                         
                                     </a>
-                                    
-                                     <input type="hidden" name="bookisbn" value="<?php echo $book_isbn;?>">
-                                        <input type="submit" value="Purchase / Add to cart" name="cart" class="btn btn-primary">
-                                </div>
+                                    </div>
                             <?php
                                 $count++;
                                 if($count >= 4){

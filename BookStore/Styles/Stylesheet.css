@@ -371,6 +371,9 @@ footer
     background-repeat: no-repeat;
     background-size: cover;
 }
+.img_childhood{
+     box-shadow: 5px 5px 5px grey;
+}
 #banner_search{
     background-image: url(../Images/book5.jpg);
     margin-left: 301px;
@@ -491,13 +494,20 @@ h2 {
 font-family:'Raleway',sans-serif
 }
 input {
-width:100%;
+width: 100%;
 margin-bottom:20px;
 padding:5px;
 height:30px;
 box-shadow:1px 1px 12px gray;
 border-radius:3px;
 border:none
+}
+input[type=text2]{
+    width:30%;
+    align-content: center;
+}
+input[value=Search]{
+    width:10%;
 }
 textarea {
 width:100%;
@@ -532,4 +542,13 @@ float:left
 .container {
 width:960px;
 margin:40px auto
+}
+#books_image{
+    width:1000px;
+    background-image: url(../Images/book3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 5px solid #111;    
+    height: 600px;
+    margin-left:325px;
 }

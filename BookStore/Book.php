@@ -19,6 +19,8 @@ include 'nav.php';
                         <li><a href="History.php?cat=History">History</a></li>
                         <li><a href="Poetry.php?cat=Poetry">Poetry</a></li>
             </ul>
+            
+            <div id="books_image" </div>
        
         </div>
 
